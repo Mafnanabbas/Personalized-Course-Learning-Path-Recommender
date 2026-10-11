@@ -1,9 +1,9 @@
-# Personalized Course & Learning Path Recommender[cite: 5]
+# Personalized Course & Learning Path Recommender [cite: 5]
 
-### Artificial Intelligence Lab Project[cite: 5]
+### Artificial Intelligence Lab Project [cite: 5]
 
-**Submitted To:** Mr. Mehmood-ul-Haq[cite: 5]  
-**Team Members:** Naveera Aamir (2024CE93) & Muhammad Afnan Abbas (2024CE03)[cite: 5]
+**Submitted To:** Mr. Mehmood-ul-Haq [cite: 5]  
+**Team Members:** Naveera Aamir (2024CE93) & Muhammad Afnan Abbas (2024CE03) [cite: 5]
 
 ---
 
