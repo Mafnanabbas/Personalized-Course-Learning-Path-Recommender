@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | PathFinder AI</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{% url 'welcome' %}">PathFinder AI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'welcome' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-3 btn-sm active" href="#">Create Account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Create Account Section -->
+    <section class="container my-5 flex-grow-1 d-flex justify-content-center align-items-center">
+        <div class="col-md-8 form-container">
+            <h2 class="text-center mb-4 fw-bold">Setup Assessment</h2>
+            <p class="text-center text-muted mb-4">Let's build your dynamic learning profile.</p>
+
+            <form action="#" method="POST">
+                <!-- CSRF Token (Required by Django) -->
+                {% csrf_token %}
+
+                <!-- Personal Information -->
+                <h4 class="mb-3 border-bottom pb-2">Personal Information</h4>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Naveera" required>
+                    </div>
+                    <div class="col">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Aamir" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                </div>
+
+                <!-- Learning Profile -->
+                <h4 class="mb-3 border-bottom pb-2">Learning Profile</h4>
+                
+                <!-- Career Goals -->
+                <div class="mb-3">
+                    <label for="careerGoals" class="form-label">Target Career Goals</label>
+                    <textarea class="form-control" id="careerGoals" rows="2" placeholder="e.g., Data Scientist, Full-Stack Developer, AI Engineer..." required></textarea>
+                    <div class="form-text">What roles are you aiming for?</div>
+                </div>
+
+                <!-- Existing Skills -->
+                <div class="mb-3">
+                    <label for="existingSkills" class="form-label">Existing Skills</label>
+                    <input type="text" class="form-control" id="existingSkills" placeholder="e.g., Python, HTML, basic SQL">
+                    <div class="form-text">Separate skills with commas.</div>
+                </div>
+
+                <!-- Areas of Interest -->
+                <div class="mb-3">
+                    <label class="form-label">Areas of Interest</label>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interestMachineLearning" value="Machine Learning">
+                                <label class="form-check-label" for="interestMachineLearning">Machine Learning</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interestWebDev" value="Web Development">
+                                <label class="form-check-label" for="interestWebDev">Web Development</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interestDataScience" value="Data Science">
+                                <label class="form-check-label" for="interestDataScience">Data Science</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interestCloud" value="Cloud Computing">
+                                <label class="form-check-label" for="interestCloud">Cloud Computing</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interestCybersecurity" value="Cybersecurity">
+                                <label class="form-check-label" for="interestCybersecurity">Cybersecurity</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="interestUIUX" value="UI/UX Design">
+                                <label class="form-check-label" for="interestUIUX">UI/UX Design</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Past Learning History -->
+                <div class="mb-4">
+                    <label for="pastCourses" class="form-label">Past Course Completion History</label>
+                    <textarea class="form-control" id="pastCourses" rows="2" placeholder="List any relevant courses you have already completed."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg fw-bold shadow-sm">Create Profile & Get Recommendations</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-4 mt-auto border-top">
+        <div class="container">
+            <p class="mb-1 text-muted fw-semibold">
+                &copy; 2026 Artificial Intelligence Lab | University of Engineering and Technology, Lahore
+            </p>
+            <small class="text-muted">Submitted To: Mr. Mehmood-ul-Haq | Developed by Naveera Aamir & Muhammad Afnan Abbas</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
