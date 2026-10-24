@@ -22,4 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.welcome, name='welcome'),
     path('create-account/', views.create_account, name='create_account'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    # Create a temporary placeholder path for the dashboard
+    path('dashboard/', views.welcome, name='dashboard'), 
 ]
