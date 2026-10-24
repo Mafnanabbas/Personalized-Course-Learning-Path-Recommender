@@ -76,6 +76,15 @@
             <h2 class="text-center mb-4 fw-bold">Setup Assessment</h2>
             <p class="text-center text-muted mb-4">Let's build your dynamic learning profile.</p>
 
+            {% if messages %}
+                {% for message in messages %}
+                     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                           {{ message }}
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                     </div>
+                {% endfor %}
+            {% endif %}
+
             <form action="#" method="POST" id="createAccountForm">
                 <!-- CSRF Token (Required by Django) -->
                 {% csrf_token %}
