@@ -26,4 +26,6 @@ urlpatterns = [
     path('', views.welcome, name='welcome'),
     path('create-account/', views.create_account, name='create_account'),
     path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'), # <-- Make sure this is here!
+    path('dashboard/', views.dashboard, name='dashboard')
 ]
